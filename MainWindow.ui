@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1158</width>
+    <height>398</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simple Terminal</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="6" column="0" colspan="3">
+       <widget class="QTableWidget" name="tableWidget"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Mode：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>Heartbeat Query</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Basic Information Query</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Maximum history voltage of cell Query</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Minimum history voltage of cell Query</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="send">
+        <property name="text">
+         <string>Send</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" rowspan="4" colspan="2">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="batterytab">
+         <attribute name="title">
+          <string>Heart rate Response</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="0">
+           <widget class="QLabel" name="processlabel">
+            <property name="text">
+             <string>Diagnostic working condition：</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tooltab">
+         <attribute name="title">
+          <string>Basic information</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="2" column="2">
+           <widget class="QLabel" name="CycleNumlabel">
+            <property name="text">
+             <string>Number of cycles used:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="Dylabel">
+            <property name="text">
+             <string>Year of Production:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="BSerieslabel">
+            <property name="text">
+             <string>Series-number:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="BTemplabel">
+            <property name="text">
+             <string>Battery pack temperature:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="Templabel">
+            <property name="text">
+             <string>Environmental temperature:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="CVolEnlabel">
+            <property name="text">
+             <string>Closed circuit charge port voltage:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="PVolEnlabel">
+            <property name="text">
+             <string>Load discharge port voltage:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="PVollabel">
+            <property name="text">
+             <string>No-load discharge port voltage:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="Dmlabel">
+            <property name="text">
+             <string>Month of Production:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="BParallellabel">
+            <property name="text">
+             <string>Parallel-number:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="Ddlabel">
+            <property name="text">
+             <string>Days of Production:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="CVollabel">
+            <property name="text">
+             <string>Open circuit charge port voltage:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="chargetab">
+         <attribute name="title">
+          <string>The highest historical voltage of the cell</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="Celldlabel">
+            <property name="text">
+             <string>Start cell number N:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="V2label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+2th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="V1label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+1th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="V6label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+6th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="Cellnumlabel">
+            <property name="text">
+             <string>Number of cells:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="V0label">
+            <property name="text">
+             <string>Historical maxmum voltage of the Nth cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="V4label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+4th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="V7label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+7th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="V3label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+3th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="V5label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+5th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="V8label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+8th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="V10label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+10th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="V9label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+9th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="V11label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+11th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="V12label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+12th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="V13label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+13Nth cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QLabel" name="V14label">
+            <property name="text">
+             <string>Historical maxmum voltage of the N+14th cell:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>The lowest historical voltage of the cell</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="1" column="0">
+           <widget class="QLabel" name="MinV0label">
+            <property name="text">
+             <string>Historical minimum voltage of the Nth cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="MinV3label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+3th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="celldlabel">
+            <property name="text">
+             <string>Start cell number N:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="MinV4label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+4th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="MinV6label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+6th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="MinV7label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+7th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="MinV2label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+2th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="MinV5label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+5th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="MinV1label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+1th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="cellnumlabel">
+            <property name="text">
+             <string>Number of cells:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="MinV8label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+8th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="MinV9label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+10th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="MinV10label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+11th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="MinV11label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+11th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="MinV12label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+12th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="MinV13label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+13th cell:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="MinV14label">
+            <property name="text">
+             <string>Historical minimum voltage of the N+14th cell:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Settings"/>
+   <addaction name="actionUpdate_File"/>
+   <addaction name="action_Connect"/>
+   <addaction name="action_Disconnect"/>
+   <addaction name="action_Clear"/>
+   <addaction name="actionSave"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_Connect">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/connect.png</normaloff>:/images/connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Connect</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect to serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_Disconnect">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/disconnect.png</normaloff>:/images/disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Disconnect</string>
+   </property>
+   <property name="toolTip">
+    <string>Disconnect from serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="action_Settings">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/settings.png</normaloff>:/images/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Configure serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </action>
+  <action name="action_Clear">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/clear.png</normaloff>:/images/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>C&amp;lear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear data</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+L</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save File </string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionUpdate_File">
+   <property name="icon">
+    <iconset resource="terminal.qrc">
+     <normaloff>:/images/file.png</normaloff>:/images/file.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update File</string>
+   </property>
+   <property name="toolTip">
+    <string>Choose update File</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="terminal.qrc"/>
+ </resources>
+ <connections/>
+</ui>
